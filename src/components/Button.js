@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 function Button(props) {
   const [click, setClick] = useState(0);
   useEffect(() => {
-    document.title = `u click ${click}`;
+    document.title = `  u click ${click}`;
   });
   return (
     <button
