@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Body from "./components/Body";
 
 // ReactDOM.render(<h1>Привет</h1>, document.getElementById("root"));
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -20,6 +21,7 @@ root.render(
   // </>
   <React.StrictMode>
     <Header />
+    <Body />
     <Footer />
   </React.StrictMode>
 );
