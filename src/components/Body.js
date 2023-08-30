@@ -1,16 +1,14 @@
 import "./styles/Body.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-// function Body() {
-//   return <div className="Body">Body</div>;
-// }
+import Button from "./Button";
 
 class Body extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       text: "Hello world",
+      newText: "",
     };
     this.onClick = this.onClick.bind(this);
   }
@@ -18,7 +16,13 @@ class Body extends React.Component {
   render() {
     return (
       <>
-        <input placeholder={this.state.text} onClick={this.onClick} />
+        <input
+          placeholder={this.state.text}
+          onClick={this.onClick}
+          onChange={(event) => this.setState({ newText: event.target.value })}
+        />
+        <h2>{this.state.newText}</h2>
+        <Button />
       </>
     );
   }
