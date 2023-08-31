@@ -4,3 +4,15 @@
   background-color: rgb(234, 233, 232);
   height: 60vh;
 }
+
+aside {
+  width: 20%;
+  margin-top: 50px;
+  margin-left: 5%;
+  float: left;
+}
+
+.user {
+  padding: 0.5rem;
+  background-color: rgba(94, 148, 94, 0.746);
+}
