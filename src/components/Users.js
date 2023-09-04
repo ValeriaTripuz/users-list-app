@@ -20,18 +20,22 @@ function Users() {
       ishappy: true,
     },
   ];
-  return (
-    <div>
-      {users.map((el) => (
-        <div className="user">
-          <h2>
-            {el.firstname} {el.lastname}
-          </h2>
-          <p>{el.bio}</p>
-        </div>
-      ))}
-    </div>
-  );
+  if (users.length > 0) {
+    return (
+      <div>
+        {users.map((el) => (
+          <div className="user" key={el.id}>
+            <h2>
+              {el.firstname} {el.lastname}
+            </h2>
+            <p>{el.bio}</p>
+            {/* <b>{el.ishappy ? "He is happy" : "She is not happy"}</b> */}
+            <b>{el.ishappy == true}</b>
+          </div>
+        ))}
+      </div>
+    );
+  } else return <div>Hey</div>;
 }
 
 export default Users;
