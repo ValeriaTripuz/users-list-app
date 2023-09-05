@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
+import User from "./User";
 
 function Users() {
-  const users = [
+  const [users, setUsers] = useState([
     {
       id: 1,
       firstname: "Lera",
@@ -19,19 +20,13 @@ function Users() {
       bio: "Lorem ipsum dolor sit arem",
       ishappy: true,
     },
-  ];
+  ]);
+
   if (users.length > 0) {
     return (
       <div>
         {users.map((el) => (
-          <div className="user" key={el.id}>
-            <h2>
-              {el.firstname} {el.lastname}
-            </h2>
-            <p>{el.bio}</p>
-            {/* <b>{el.ishappy ? "He is happy" : "She is not happy"}</b> */}
-            <b>{el.ishappy == true}</b>
-          </div>
+          <User key={el.id} user={el} />
         ))}
       </div>
     );
