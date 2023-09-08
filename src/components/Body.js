@@ -1,37 +1,40 @@
 import "./styles/Body.css";
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import Users from "./Users";
+import AddUser from "./AddUser";
 
-class Body extends React.Component {
-  //   constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //       text: "Hello world",
-  //       newText: "",
-  //     };
-  //     this.onClick = this.onClick.bind(this);
-  //   }
-  //   text = "Hello world";
-  render() {
-    return (
-      <>
-        <Users />
-        <aside></aside>
-        {/* <input
-          placeholder={this.state.text}
-          onClick={this.onClick}
-          onChange={(event) => this.setState({ newText: event.target.value })}
-        />
-        <h2>{this.state.newText}</h2> */}
-        {/* <Button /> */}
-      </>
-    );
-  }
+function Body() {
+  const [users, setUsers] = useState([
+    {
+      id: 1,
+      firstname: "Lera",
+      lastname: "Tripuz",
+      age: 21,
+      bio: "Lorem ipsum dolor sit arem",
+      ishappy: false,
+    },
+    {
+      id: 2,
+      firstname: "Nikita",
+      lastname: "Kushner",
+      age: 21,
+      bio: "Lorem ipsum dolor sit arem",
+      ishappy: true,
+    },
+  ]);
 
-  //   onClick() {
-  //     this.setState({ text: "Hello world from Lera" });
+  //     AddUser(user){
   //   }
+
+  return (
+    <>
+      <Users users={users} />
+      <div className="add">
+        <AddUser />
+      </div>
+    </>
+  );
 }
 
 export default Body;
